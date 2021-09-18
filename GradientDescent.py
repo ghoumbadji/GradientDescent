@@ -1,9 +1,7 @@
 import numpy as np
-import random as rd
 
-#Suppose
-# We work in a 2D dimension so for each point, we'll have (xi, yi(real) | yp(predicted))
-# We'll use Mean Square Error (MSE) as loss function
+# We'll work in a 2D dimension so for each point, we'll have (xi, yi(real) | yp(predicted))
+# We'll use Mean Square Error (MSE) as the loss function as we have a regression problem
 # By definition we have MSE = (1 / n) * [sum (yi - yp) for xi values]
 # If we suppose that predicted value follows linear rule, we have yp = (m * x) + b
 # So the developed formula of loss is MSE = (1 / n) * [sum (yi - ((m * x) + b)) for xi in values]
@@ -12,9 +10,9 @@ import random as rd
 
 class GDRegressor:
     def __init__(self, learning_rate=0.01, epochs=50):
-        rd.seed()
-        self.m = rd.randint(1,9)
-        self.b = rd.randint(1,9)
+        np.random.seed()
+        self.m = np.random.randn()
+        self.b = np.random.randn()
         self.lr = learning_rate
         self.epochs = epochs
 
